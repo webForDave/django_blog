@@ -2,3 +2,5 @@
 .env
 blog/migrations
 config/__pycache__
+db.sqlite3
+blog/__pycache__
