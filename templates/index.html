@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
+    {% if user.is_authenticated %}
+        <p>Hello {{ user.username }}</p>
+    {% else %}
+        <a href="{% url 'login' %}">Log In</a>
+    {% endif %}
     {% for post in object_list %}
-        <div class="post_entry">
+        <div>
             <h2><a href="{% url 'blog_detail' post.pk %}">{{ post.title }}</a></h2>
             <p>{{ post.body }}</p>
         </div>
